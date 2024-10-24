@@ -1,7 +1,5 @@
 # Spotify User Penetration Analysis
 
-## Question
-
 Market penetration is an important metric for understanding Spotify's performance and growth potential in different regions. You are part of the analytics team at Spotify and are tasked with calculating the active user penetration rate in specific countries.
 
 For this task, 'active_users' are defined based on the following criteria:
@@ -59,3 +57,10 @@ JOIN
 -- Group by country to ensure each country appears once in the result
 GROUP BY 
     t.country;
+```
+## Explanation of the Query Structure  
+
+1. Common Table Expressions (CTEs): Two CTEs are defined: active_users for counting active users and total_users for counting all users.
+2. Filtering Conditions: In the active_users CTE, specific criteria (date range, session count, and listening hours) are applied to filter the user data.
+3. Aggregation: Both CTEs aggregate data using the COUNT function, grouping by country.
+4. Final Calculation: In the final SELECT statement, the active user penetration rate is calculated by dividing the active user count by the total user count for each country, with the result rounded to two decimal places.
